@@ -34,4 +34,4 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 
 ### Support or Contact
 
-Having trouble with System? Check out our [documentation](https://github.com/PowerDD/Warehouse/wiki) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Having trouble with System? Check out our [documentation](https://github.com/PowerDD/Warehouse/wiki) or [contact support](https://www.remaxthailand.co.th) and we’ll help you sort it out.
