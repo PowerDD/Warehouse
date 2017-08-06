@@ -11,6 +11,7 @@ global.sub = redis.createClient(config.redis.server);
 
 const app = express();
 
+// Github Webhook
 var webhookHandler = GithubWebHook(config.github.webHook);
 
 app.use(bodyParser.json());
