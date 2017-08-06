@@ -40,8 +40,6 @@ sub.subscribe('SVN');
 // Github Webhook
 app.use(webhookHandler);
 webhookHandler.on('*', function (event, repo, data) {
-	console.log(data.ref);
-	console.log('xxx '+'refs/heads/'+config.github.branch);
 	if (event == 'push' && repo == 'Warehouse' && data.ref == 'refs/heads/'+config.github.branch) {
 		pub.publish('SVN', 'update');
 	}
