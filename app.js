@@ -24,6 +24,7 @@ sub.on('subscribe', function (channel, count) {
 sub.on('message', function (channel, message) {
 	if (channel == 'SVN') {
 		if (message == 'update') {
+			// Update SVN
 			ssh = new node_ssh();
 			ssh.connect(config.ssh)
 			.then(function() {
