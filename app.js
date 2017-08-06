@@ -48,10 +48,8 @@ webhookHandler.on('*', function (event, repo, data) {
 });
 
 app.get('*', function (req, res) {
-  res.send(config.systemName);
+  res.send('System Name : ' + config.systemName);
 });
-
-
 
 app.listen(config.port, function () {
   console.log('Example app listening on port '+config.port+'!')
