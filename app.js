@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Redis Subscriptions
 sub.on('subscribe', function (channel, count) {
-	console.log('Redis Subscribe Channel '+channel);
+	console.log('Subscribe Redis Channel '+channel);
 });
 sub.on('message', function (channel, message) {
 	if (channel == 'SVN') {
