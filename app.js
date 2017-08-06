@@ -45,7 +45,7 @@ webhookHandler.on('*', function (event, repo, data) {
 });
 
 app.get('*', function (req, res) {
-  res.send('Hello World!')
+  res.send(config.systemName);
 });
 
 
