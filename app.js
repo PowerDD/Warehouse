@@ -23,7 +23,7 @@ sub.on('subscribe', function (channel, count) {
 });
 sub.on('message', function (channel, message) {
 	if (channel == 'SVN') {
-		if (message == 'update-Warehouse-'+config.github.branch) {
+		if (message == 'update-warehouse-'+config.github.branch) {
 			// Update SVN
 			ssh = new node_ssh();
 			ssh.connect(config.ssh)
@@ -42,12 +42,12 @@ sub.subscribe('SVN');
 app.use(webhookHandler);
 webhookHandler.on('*', function (event, repo, data) {
 	if (event == 'push' && repo == 'Warehouse' && data.ref == 'refs/heads/'+config.github.branch) {
-		pub.publish('SVN', 'update-Warehouse-'+config.github.branch);
+		pub.publish('SVN', 'update-warehouse-'+config.github.branch);
 	}
 });
 
 app.get('*', function (req, res) {
-  res.send('System Name : ' + config.systemName);
+  res.send(config.systemName);
 });
 
 app.listen(config.port, function () {
