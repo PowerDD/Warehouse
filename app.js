@@ -30,7 +30,9 @@ sub.on('message', function (channel, message) {
 			.then(function() {
 				ssh.execCommand('svn update', { cwd: __dirname }).then(function(result) {
 					console.log(result.stdout);
-					ssh.dispose();
+					ssh.execCommand(('pm2 restart warehouse-'+config.github.branch).replace('-master', ''), { cwd: __dirname }).then(function(result) {
+						ssh.dispose();
+					})
 				})
 			});
 		}
