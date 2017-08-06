@@ -49,7 +49,7 @@ webhookHandler.on('*', function (event, repo, data) {
 });
 
 app.get('*', function (req, res) {
-  res.send(config.systemName);
+  res.send('System : ' + config.systemName);
 });
 
 app.listen(config.port, function () {
